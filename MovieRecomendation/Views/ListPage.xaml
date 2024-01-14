@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieRecomendation.ListPage"
+             Title="Polecane filmy">
+
+    <ScrollView BackgroundColor="#181818">
+
+        <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="0" Stroke="Gray" Margin="20, 10, 20, 10" Background="#181818">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="28"/>
+                        </Border.StrokeShape>
+                        <StackLayout Orientation="Horizontal" HeightRequest="200">
+                            <Image Source="{Binding poster_path}"/>
+                            <Label Text="{Binding original_title}" FontSize="Medium" TextColor="AliceBlue"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </ScrollView>
+
+</ContentPage>
